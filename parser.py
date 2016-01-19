@@ -45,3 +45,12 @@ class RCGPParser(BaseParser):
                 return False
 
         return True
+
+
+class BSGParser(BaseParser):
+
+    def __init__(self):
+        self.key_node = '//tr[@class="sectiontableentry1"]'
+        logger = 'BSGP'
+        self.url = 'http://www.bsg.org.uk/events/index.html'
+        super(BSGParser, self).__init__(logger)
