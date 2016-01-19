@@ -53,6 +53,25 @@ class RCGPParser(BaseParser):
 
         return True
 
+    def tracker(self):
+        count = 1
+        data = []
+
+        while True:
+            url = self.url % count
+            response = self.make_call(call_type='get', url=url)
+            parse_html = self.parse_html(response.content)
+            parse_continue = self.is_parse_continue(parse_html, count)
+            if not parse_continue:
+                break
+
+            for resp in self.parse_node(parse_html, self.key_node):
+                data.append({
+                    'title': resp.find('h3/a').text,
+                    'summary': resp.find('div[@class="summary-col"]/p').text,
+                })
+        return data
+
 
 class BSGParser(BaseParser):
 
