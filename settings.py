@@ -4,7 +4,7 @@ LOG_LEVEL = 'DEBUG'
 
 EMAIL_INFO = {
     'sender': 'srk.pranto@gmail.com',
-    'password': 'pranto261984',
+    'password': 'agora2016$',
     'user_name': 'HTML Parsing Report',
     'receiver': ", ".join(['pranto157@gmail.com', 'jeb@joinagora.com']),
     'subject': 'HTML Parsing Report'
