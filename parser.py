@@ -1,14 +1,21 @@
 import requests
 from lxml import html
 
+import log
+
 
 class BaseParser(object):
+
+    def __init__(self, logger):
+        self.logger = log.get_logger(logger)
 
     def make_call(self, call_type, **kwargs):
         try:
             response = requests.get(**kwargs) if call_type == 'get' else requests.post(**kwargs)
+            self.logger.info("Fetching - %r" % response.url)
             response.raise_for_status()
         except (requests.HTTPError, requests.RequestException) as e:
+            self.logger.exception('Exception %s' % e.__class__.__name__)
             raise
         else:
             return response
