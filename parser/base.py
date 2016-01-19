@@ -13,10 +13,8 @@ class BaseParser(object):
         try:
             response = requests.get(**kwargs) if call_type == 'get' else requests.post(**kwargs)
             self.logger.info("Fetching - %r" % response.url)
-            response.raise_for_status()
-        except (requests.HTTPError, requests.RequestException) as e:
+        except requests.RequestException as e:
             self.logger.exception('Exception %s' % e.__class__.__name__)
-            raise
         else:
             return response
 
