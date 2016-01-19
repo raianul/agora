@@ -72,6 +72,13 @@ class RCGPParser(BaseParser):
                 })
         return data
 
+    def prepare_data_dict(self, item):
+        data = {
+            "Title": item['title'],
+            "Summary": item['summary'],
+        }
+        return data
+
 
 class BSGParser(BaseParser):
 
@@ -94,4 +101,14 @@ class BSGParser(BaseParser):
                 'city': resp.find('td[@headers="el_city"]').text,
                 'type': resp.find('td[@headers="el_category"]/a').text,
             })
+        return data
+
+    def prepare_data_dict(self, item):
+        data = {
+            "Date": item['date'],
+            "Title": item['title'],
+            "Location": item['location'],
+            "City": item['city'],
+            "Type": item['type'],
+        }
         return data
