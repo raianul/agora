@@ -1,6 +1,7 @@
 import argparse
 
-from parser import RCGPParser, BSGParser
+from parser.bsg import BSGParser
+from parser.rcgp import RCGPParser
 
 
 HTML_PARSER = {
