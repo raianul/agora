@@ -3,6 +3,7 @@ This is test project for Agora.
 
 # How to run this project ?
  - Clone this reporsitory - `git clone git@github.com:pranto157/agora.git`
+ - If you would like to create separate virtualenv for this project, please follow this [link](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
  - Change directory - `cd agora`
  - then install all requirements by - `pip install -r requirements.txt`
 
