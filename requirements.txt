@@ -5,7 +5,7 @@ gnureadline==6.3.3
 ipdb==0.8.1
 ipython==4.0.2
 ipython-genutils==0.1.0
-lxml==3.5.0
+lxml==4.6.2
 path.py==8.1.2
 pexpect==4.0.1
 pickleshare==0.5
