@@ -13,7 +13,7 @@ setup(name='agora',
       packages=find_packages(exclude=('tests', 'tests.*')),
       install_requires=requirements_to_requires('requirements.txt'),
       setup_requires=[
-          'wheel==0.24.0',
+          'wheel==0.38.1',
       ],
       zip_safe=False,
       )
